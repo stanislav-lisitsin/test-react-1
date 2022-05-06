@@ -1,0 +1,34 @@
+.spinner {
+  position: absolute;
+  right: -50px;
+
+  &__inner, &__outer {
+    content: '';
+    display: block;
+    position: absolute;
+    opacity: 1;
+    border-radius: 50%;
+    animation: is-loading 1.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+  }
+
+  &__outer {
+    animation-delay: -.7s;
+  }
+}
+
+@keyframes is-loading {
+  0% {
+    top: 49%;
+    left: 49%;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: -1%;
+    left: -1%;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+  }
+}
